@@ -5,12 +5,12 @@ metadata: # metadados do recurso
 spec: # especificação do recurso
   selector: # seletor para identificar os pods que serão gerenciados pelo deployment
     matchLabels: # labels que identificam os pods que serão gerenciados pelo deployment
-      app: nginx # label que identifica o app que será gerenciado pelo deployment
+      app: nginx1 # label que identifica o app que será gerenciado pelo deployment
   replicas: 2 # quantidade de réplicas do deployment
   template: # template do deployment
     metadata: # metadados do template
       labels: # labels do template
-        app: nginx # label que identifica o app
+        app: nginx1 # label que identifica o app
       annotations: # annotations do template
         prometheus.io/scrape: 'true' # habilita o scraping do Prometheus
         prometheus.io/port: '9113' # porta do target
