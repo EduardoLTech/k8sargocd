@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: devops
+  name: podum-devops
+  labels:
+    app: nginx
+    versao: latest
+spec:
+  containers:
+    - name: podum
+      image: nginx:latest

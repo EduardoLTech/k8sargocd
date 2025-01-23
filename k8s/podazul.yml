@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podazul
+  labels:
+    app: nginx
+    versao: azul
+spec:
+  containers:
+    - name: podazul
+      image: kubedevio/nginx-color:blue
+      args:
+        - "--platform"
+        - "linux/amd64"
