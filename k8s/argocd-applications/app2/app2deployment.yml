@@ -7,7 +7,7 @@ spec:
     rollingUpdate:
       maxUnavailable: 10%
       maxSurge: 0
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: exemplo
