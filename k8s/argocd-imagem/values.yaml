@@ -1,6 +1,6 @@
 image:
   repository: southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx
-  tag: 1.4.0
+  tag: latest
   pullSecret: gcr-credentials
 
 service:
