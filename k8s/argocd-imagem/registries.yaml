@@ -1,0 +1,6 @@
+registries:
+  - name: southamerica-east1-docker.pkg.dev
+    api_url: https://southamerica-east1-docker.pkg.dev
+    prefix: southamerica-east1-docker.pkg.dev
+    credentials: pullsecret
+    ping: yes

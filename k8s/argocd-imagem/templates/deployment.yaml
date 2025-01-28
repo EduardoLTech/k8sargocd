@@ -11,10 +11,12 @@ spec:
     metadata:
       labels:
         app: api-imagem-gcp
+      annotations:
+        argocd-image-updater.argoproj.io/image-list: api-imagem-gcp=southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx
     spec:
       containers:
         - name: api-imagem-gcp
-          image: "{{ .Values.image.repository }}@{{ .Values.image.digest }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
       imagePullSecrets:
