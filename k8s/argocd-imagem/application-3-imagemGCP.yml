@@ -17,6 +17,9 @@ spec:
     repoURL: https://github.com/EduardoLTech/k8sargocd.git
     targetRevision: main
     path: k8s/argocd-imagem
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://192.168.1.10:6443
     namespace: imagem

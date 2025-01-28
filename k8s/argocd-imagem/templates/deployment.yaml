@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-imagem-gcp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-imagem-gcp
+  template:
+    metadata:
+      labels:
+        app: api-imagem-gcp
+    spec:
+      containers:
+        - name: api-imagem-gcp
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecret }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-imagem-gcp-service
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      nodePort: {{ .Values.service.nodePort }}
+  selector:
+    app: api-imagem-gcp

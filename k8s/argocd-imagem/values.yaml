@@ -1,0 +1,10 @@
+image:
+  repository: southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx
+  tag: latest
+  pullSecret: gcr-credentials
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 30089
