@@ -1,17 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api
+  name: api-imagem-gcp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: api-imagem-gcp
   template:
     metadata:
       labels:
-        app: api
+        app: api-imagem-gcp
     spec:
       containers:
-        - name: api
-          image: southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx:1.0.0
+        - name: api-imagem-gcp
+          image: southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx:1.2.0
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: gcr-credentials
