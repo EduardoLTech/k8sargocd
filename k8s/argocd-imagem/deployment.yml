@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-imagem-gcp
-          image: southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx:1.2.0
+          image: southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx:latest
           ports:
             - containerPort: 80
       imagePullSecrets:
