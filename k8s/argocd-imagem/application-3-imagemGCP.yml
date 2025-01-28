@@ -7,8 +7,10 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: api-imagem-gcp=southamerica-east1-docker.pkg.dev/payface-repo/eduardo-argocd/nginx
     argocd-image-updater.argoproj.io/api-imagem-gcp.update-strategy: latest
     argocd-image-updater.argoproj.io/api-imagem-gcp.allow-tags: regexp:(^[0-9]+\.[0-9]+\.[0-9]+$|^latest$)
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-method: argocd
     argocd-image-updater.argoproj.io/api-imagem-gcp.force-update: "true"
+    argocd-image-updater.argoproj.io/api-imagem-gcp.pull-secret: gcr-credentials
+    argocd-image-updater.argoproj.io/api-imagem-gcp.pull-secret-namespace: imagem
 spec:
   project: default
   source:
